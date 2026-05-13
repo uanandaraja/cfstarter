@@ -74,7 +74,7 @@ export const organization = sqliteTable(
     createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
     updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
   },
-  (table) => [index("organization_owner_id_idx").on(table.ownerId)],
+  (table) => [index("organization_owner_id_idx").on(table.ownerId)]
 )
 
 export const membership = sqliteTable(
@@ -96,7 +96,7 @@ export const membership = sqliteTable(
   (table) => [
     index("membership_organization_id_idx").on(table.organizationId),
     index("membership_user_id_idx").on(table.userId),
-  ],
+  ]
 )
 
 export const subscription = sqliteTable(
@@ -116,5 +116,7 @@ export const subscription = sqliteTable(
     createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
     updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
   },
-  (table) => [index("subscription_organization_id_idx").on(table.organizationId)],
+  (table) => [
+    index("subscription_organization_id_idx").on(table.organizationId),
+  ]
 )

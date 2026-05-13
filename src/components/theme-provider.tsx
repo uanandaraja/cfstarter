@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react"
 import type { ReactNode } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 
 const THEME_STORAGE_KEY = "saas-starter:theme"
 const THEMES = ["light", "dark"] as const

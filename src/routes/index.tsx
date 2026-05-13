@@ -1,4 +1,12 @@
-import { ArrowRight, Cloud, Database, Moon, ShieldCheck, Sparkle, Sun } from "@phosphor-icons/react"
+import {
+  ArrowRight,
+  Cloud,
+  Database,
+  Moon,
+  ShieldCheck,
+  Sparkle,
+  Sun,
+} from "@phosphor-icons/react"
 import { createFileRoute } from "@tanstack/react-router"
 import type { ReactNode } from "react"
 
@@ -38,7 +46,9 @@ function LandingPage() {
               Ship the product, not the boilerplate.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Auth, D1, Drizzle, Tailwind CSS, shadcn components, protected routes, TanStack Query, and Cloudflare deployment are wired from day one.
+              Auth, D1, Drizzle, Tailwind CSS, shadcn components, protected
+              routes, TanStack Query, and Cloudflare deployment are wired from
+              day one.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <AuthModalTrigger>
@@ -64,9 +74,21 @@ function LandingPage() {
               <CardTitle>Included stack</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-4">
-              <Feature icon={<Cloud className="size-5" />} title="Cloudflare native" description="Workers deploy target with D1 binding and Wrangler config." />
-              <Feature icon={<Database className="size-5" />} title="Drizzle schema" description="Better Auth tables plus organization, membership, and subscription models." />
-              <Feature icon={<ShieldCheck className="size-5" />} title="Google auth" description="Better Auth route handlers, client helpers, and protected app route." />
+              <Feature
+                icon={<Cloud className="size-5" />}
+                title="Cloudflare native"
+                description="Workers deploy target with D1 binding and Wrangler config."
+              />
+              <Feature
+                icon={<Database className="size-5" />}
+                title="Drizzle schema"
+                description="Better Auth tables plus organization, membership, and subscription models."
+              />
+              <Feature
+                icon={<ShieldCheck className="size-5" />}
+                title="Google auth"
+                description="Better Auth route handlers, client helpers, and protected app route."
+              />
             </CardContent>
           </Card>
         </div>
@@ -80,22 +102,55 @@ function ThemeToggle() {
   const isDark = theme === "dark"
 
   return (
-    <Button type="button" variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground" onClick={toggleTheme} aria-label="Toggle theme">
+    <Button
+      type="button"
+      variant="ghost"
+      size="icon"
+      className="text-muted-foreground hover:text-foreground"
+      onClick={toggleTheme}
+      aria-label="Toggle theme"
+    >
       <span className="relative grid size-4 place-items-center">
-        <Sun className={cn("absolute size-4 transition-[opacity,filter,scale] duration-300 ease-out", isDark ? "scale-100 opacity-100 blur-0" : "scale-[0.25] opacity-0 blur-[4px]")} />
-        <Moon className={cn("size-4 transition-[opacity,filter,scale] duration-300 ease-out", isDark ? "scale-[0.25] opacity-0 blur-[4px]" : "scale-100 opacity-100 blur-0")} />
+        <Sun
+          className={cn(
+            "absolute size-4 transition-[opacity,filter,scale] duration-300 ease-out",
+            isDark
+              ? "scale-100 opacity-100 blur-0"
+              : "scale-[0.25] opacity-0 blur-[4px]"
+          )}
+        />
+        <Moon
+          className={cn(
+            "size-4 transition-[opacity,filter,scale] duration-300 ease-out",
+            isDark
+              ? "scale-[0.25] opacity-0 blur-[4px]"
+              : "scale-100 opacity-100 blur-0"
+          )}
+        />
       </span>
     </Button>
   )
 }
 
-function Feature({ icon, title, description }: { icon: ReactNode; title: string; description: string }) {
+function Feature({
+  icon,
+  title,
+  description,
+}: {
+  icon: ReactNode
+  title: string
+  description: string
+}) {
   return (
     <div className="flex gap-4 rounded-xl border bg-background/70 p-4">
-      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">{icon}</div>
+      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+        {icon}
+      </div>
       <div>
         <h2 className="font-medium tracking-tight">{title}</h2>
-        <p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p>
+        <p className="mt-1 text-sm leading-6 text-muted-foreground">
+          {description}
+        </p>
       </div>
     </div>
   )

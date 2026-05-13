@@ -1,20 +1,24 @@
 import { TanStackDevtools } from "@tanstack/react-devtools"
-import { HeadContent, Scripts, createRootRouteWithContext } from "@tanstack/react-router"
+import type { QueryClient } from "@tanstack/react-query"
+import {
+  createRootRouteWithContext,
+  HeadContent,
+  Scripts,
+} from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { useEffect } from "react"
-import appCss from "../styles.css?url"
-import type { QueryClient } from "@tanstack/react-query"
-
 import { AuthModalProvider } from "@/components/auth/auth-modal"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
+import appCss from "../styles.css?url"
 
 type RouterContext = {
   queryClient: QueryClient
 }
 
 const DEFAULT_TITLE = "CF Starter"
-const DEFAULT_DESCRIPTION = "A production-ready TanStack Start SaaS starter for Cloudflare Workers, D1, Drizzle, Tailwind CSS, shadcn, Better Auth, and TanStack Query."
+const DEFAULT_DESCRIPTION =
+  "A production-ready TanStack Start SaaS starter for Cloudflare Workers, D1, Drizzle, Tailwind CSS, shadcn, Better Auth, and TanStack Query."
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   head: () => ({
@@ -34,8 +38,12 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   notFoundComponent: () => (
     <main className="mx-auto flex min-h-svh max-w-2xl flex-col items-center justify-center px-6 text-center">
       <p className="text-sm font-medium text-muted-foreground">404</p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight">Page not found</h1>
-      <p className="mt-3 text-muted-foreground">The page you requested does not exist.</p>
+      <h1 className="mt-3 text-3xl font-semibold tracking-tight">
+        Page not found
+      </h1>
+      <p className="mt-3 text-muted-foreground">
+        The page you requested does not exist.
+      </p>
     </main>
   ),
   shellComponent: RootDocument,
@@ -60,7 +68,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </ThemeProvider>
         <TanStackDevtools
           config={{ position: "bottom-right" }}
-          plugins={[{ name: "Tanstack Router", render: <TanStackRouterDevtoolsPanel /> }]}
+          plugins={[
+            {
+              name: "Tanstack Router",
+              render: <TanStackRouterDevtoolsPanel />,
+            },
+          ]}
         />
         <Scripts />
       </body>

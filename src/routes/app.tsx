@@ -42,7 +42,8 @@ function AppPage() {
             <CardTitle>Welcome, {session.user.name}</CardTitle>
           </CardHeader>
           <CardContent className="text-muted-foreground">
-            Replace this protected dashboard with your product. Auth, routing, query client, and Cloudflare bindings are already in place.
+            Replace this protected dashboard with your product. Auth, routing,
+            query client, and Cloudflare bindings are already in place.
           </CardContent>
         </Card>
         <Card>

@@ -1,35 +1,33 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "cfstarter",
-	"compatibility_date": "2026-05-08",
-	"compatibility_flags": [
-		"nodejs_compat"
-	],
-	"main": "src/server-entry.ts",
-	"observability": {
-		"enabled": false,
-		"head_sampling_rate": 1,
-		"logs": {
-			"enabled": true,
-			"head_sampling_rate": 1,
-			"persist": true,
-			"invocation_logs": true
-		},
-		"traces": {
-			"enabled": false,
-			"persist": true,
-			"head_sampling_rate": 1
-		}
-	},
-	"vars": {
-		"APP_NAME": "CF Starter"
-	},
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "cfstarter",
-			"database_id": "b5c2c27e-a161-412d-b44c-2b03b74f106e",
-			"migrations_dir": "drizzle"
-		}
-	]
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cfstarter",
+  "compatibility_date": "2026-05-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/server-entry.ts",
+  "observability": {
+    "enabled": false,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": false,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
+  },
+  "vars": {
+    "APP_NAME": "CF Starter"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cfstarter",
+      "database_id": "b5c2c27e-a161-412d-b44c-2b03b74f106e",
+      "migrations_dir": "drizzle"
+    }
+  ]
 }

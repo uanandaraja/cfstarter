@@ -66,9 +66,9 @@ bun run deploy
 ```bash
 bun run dev          # local dev
 bun run typecheck    # TypeScript check
-bun run lint         # ESLint
+bun run lint         # Biome check
 bun run build        # production build
-bun run test         # tests
+bun run test         # Vitest tests
 ```
 
 ## Database Commands
@@ -96,6 +96,19 @@ bunx shadcn add input label dropdown-menu
 ```
 
 shadcn config is in `components.json`. Tailwind CSS is in `src/styles.css`.
+
+## Code Quality
+
+This project uses Biome for linting, formatting, and import organization.
+
+```bash
+bun run lint      # check lint/format/imports
+bun run format    # write Biome fixes
+bun run typecheck # TypeScript check
+bun run test      # Vitest tests
+```
+
+Biome config is in `biome.jsonc`.
 
 ## Useful Files
 

@@ -8,7 +8,11 @@ type TextShimmerProps = {
   duration?: number
 }
 
-export function TextShimmer({ children, className, duration = 2 }: TextShimmerProps) {
+export function TextShimmer({
+  children,
+  className,
+  duration = 2,
+}: TextShimmerProps) {
   return (
     <span className={cn("relative inline-block overflow-hidden", className)}>
       <span className="text-[var(--shimmer-base)]">{children}</span>
