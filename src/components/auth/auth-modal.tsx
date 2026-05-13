@@ -62,7 +62,7 @@ function AuthModalContent() {
     >
       <div className="px-6 pt-6 pb-6">
         <DialogTitle className="text-center text-xl leading-6 font-medium tracking-tight text-foreground">
-          Sign in to SaaS Starter
+          Sign in to CF Starter
         </DialogTitle>
         <DialogDescription className="sr-only">
           Sign in with Google

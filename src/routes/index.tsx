@@ -2,19 +2,16 @@ import {
   ArrowRight,
   Cloud,
   Database,
-  Moon,
   ShieldCheck,
   Sparkle,
-  Sun,
 } from "@phosphor-icons/react"
 import { createFileRoute } from "@tanstack/react-router"
 import type { ReactNode } from "react"
 
 import { AuthModalTrigger } from "@/components/auth/auth-modal"
-import { useTheme } from "@/components/theme-provider"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
 
 export const Route = createFileRoute("/")({ component: LandingPage })
 
@@ -94,41 +91,6 @@ function LandingPage() {
         </div>
       </section>
     </main>
-  )
-}
-
-function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme()
-  const isDark = theme === "dark"
-
-  return (
-    <Button
-      type="button"
-      variant="ghost"
-      size="icon"
-      className="text-muted-foreground hover:text-foreground"
-      onClick={toggleTheme}
-      aria-label="Toggle theme"
-    >
-      <span className="relative grid size-4 place-items-center">
-        <Sun
-          className={cn(
-            "absolute size-4 transition-[opacity,filter,scale] duration-300 ease-out",
-            isDark
-              ? "scale-100 opacity-100 blur-0"
-              : "scale-[0.25] opacity-0 blur-[4px]"
-          )}
-        />
-        <Moon
-          className={cn(
-            "size-4 transition-[opacity,filter,scale] duration-300 ease-out",
-            isDark
-              ? "scale-[0.25] opacity-0 blur-[4px]"
-              : "scale-100 opacity-100 blur-0"
-          )}
-        />
-      </span>
-    </Button>
   )
 }
 

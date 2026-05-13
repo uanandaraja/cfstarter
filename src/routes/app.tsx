@@ -1,6 +1,7 @@
 import { SignOut } from "@phosphor-icons/react"
 import { createFileRoute, redirect } from "@tanstack/react-router"
 
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { signOutAndRedirect } from "@/lib/auth-client"
@@ -28,12 +29,15 @@ function AppPage() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <div>
             <p className="text-sm text-muted-foreground">Workspace</p>
-            <h1 className="font-semibold tracking-tight">SaaS Starter</h1>
+            <h1 className="font-semibold tracking-tight">CF Starter</h1>
           </div>
-          <Button variant="outline" onClick={() => void signOutAndRedirect()}>
-            <SignOut className="size-4" />
-            Sign out
-          </Button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button variant="outline" onClick={() => void signOutAndRedirect()}>
+              <SignOut className="size-4" />
+              Sign out
+            </Button>
+          </div>
         </div>
       </header>
       <section className="mx-auto grid max-w-6xl gap-6 px-6 py-8 md:grid-cols-3">
