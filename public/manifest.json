@@ -1,0 +1,9 @@
+{
+  "short_name": "CF Starter",
+  "name": "CF Starter",
+  "description": "A TanStack Start SaaS starter for Cloudflare Workers, D1, Drizzle, Tailwind CSS, shadcn, Better Auth, and TanStack Query.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5"
+}
