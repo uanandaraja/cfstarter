@@ -1,10 +1,12 @@
-import { ArrowRight, Cloud, Database, ShieldCheck, Sparkle } from "@phosphor-icons/react"
+import { ArrowRight, Cloud, Database, Moon, ShieldCheck, Sparkle, Sun } from "@phosphor-icons/react"
 import { createFileRoute } from "@tanstack/react-router"
 import type { ReactNode } from "react"
 
 import { AuthModalTrigger } from "@/components/auth/auth-modal"
+import { useTheme } from "@/components/theme-provider"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
 
 export const Route = createFileRoute("/")({ component: LandingPage })
 
@@ -17,17 +19,20 @@ function LandingPage() {
             <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
               <Sparkle weight="fill" className="size-4" />
             </div>
-            SaaS Starter
+            CF Starter
           </div>
-          <AuthModalTrigger>
-            <Button variant="outline">Sign in</Button>
-          </AuthModalTrigger>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <AuthModalTrigger>
+              <Button variant="outline">Sign in</Button>
+            </AuthModalTrigger>
+          </div>
         </nav>
 
         <div className="grid flex-1 items-center gap-10 py-20 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="inline-flex rounded-full border bg-card px-3 py-1 text-sm text-muted-foreground shadow-sm">
-              TanStack Start + Cloudflare SaaS foundation
+              TanStack Start + Cloudflare foundation
             </p>
             <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
               Ship the product, not the boilerplate.
@@ -67,6 +72,20 @@ function LandingPage() {
         </div>
       </section>
     </main>
+  )
+}
+
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme()
+  const isDark = theme === "dark"
+
+  return (
+    <Button type="button" variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground" onClick={toggleTheme} aria-label="Toggle theme">
+      <span className="relative grid size-4 place-items-center">
+        <Sun className={cn("absolute size-4 transition-[opacity,filter,scale] duration-300 ease-out", isDark ? "scale-100 opacity-100 blur-0" : "scale-[0.25] opacity-0 blur-[4px]")} />
+        <Moon className={cn("size-4 transition-[opacity,filter,scale] duration-300 ease-out", isDark ? "scale-[0.25] opacity-0 blur-[4px]" : "scale-100 opacity-100 blur-0")} />
+      </span>
+    </Button>
   )
 }
 
